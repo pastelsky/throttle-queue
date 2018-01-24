@@ -23,7 +23,7 @@ All while keeping your code execution serial :)
 ## Usage
 
 ```js
-const Queue = require("throttle-queue");
+const Queue = require('throttle-queue');
 const taskQueue = new Queue({ concurrency: 2 });
 
 taskQueue.setExecutor(async ({ pokemon }) => {
@@ -59,7 +59,7 @@ const queue = new Queue(options);
 
 queue.setExecutor(params => {
   console.log('received params', params);
-  return "done";
+  return 'done';
 });
 ```
 
