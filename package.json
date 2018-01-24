@@ -1,0 +1,9 @@
+{
+  "name": "throttle-queue",
+  "version": "0.1.0",
+  "description": "A promise based priority queue with task deduplication, concurrency control, serial resolution and aging.",
+  "main": "index.js",
+  "repository": "https://github.com/pastelsky/throttle-queue",
+  "author": "Shubham Kanodia <shubham.kanodia10@gmail.com>",
+  "license": "MIT"
+}
