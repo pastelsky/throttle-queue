@@ -16,7 +16,7 @@ A promise based priority queue with task deduplication, concurrency control, ser
 - Job Deduplication
 - Priority Assignment
 - Concurrency control
-- ging of jobs to prevent starvation
+- Aging of jobs to prevent starvation
 
 All while keeping your code execution serial :)
 
