@@ -5,18 +5,18 @@ A promise based priority queue with task deduplication, concurrency control, ser
 ## Installation
 
 ```bash
-    npm install throttle-queue
-            # OR
-    yarn add throttle-queue
+  npm install throttle-queue
+  # or
+  yarn add throttle-queue
 ```
 
 ## Features
 
-* Async jobs with promise support
-* Job Deduplication
-* Priority Assignment
-* Concurrency control
-* Aging of jobs to prevent starvation
+- Async jobs with promise support
+- Job Deduplication
+- Priority Assignment
+- Concurrency control
+- ging of jobs to prevent starvation
 
 All while keeping your code execution serial :)
 
@@ -32,7 +32,7 @@ taskQueue.setExecutor(async ({ pokemon }) => {
   return await response.json();
 });
 
-const result = await taskQueue.process({ pokemon: "mew" }, "mew")
+const result = await taskQueue.process({ pokemon: 'mew' }, 'mew')
 console.log('I found', result)
 ```
 
@@ -58,7 +58,7 @@ const queue = new Queue(options);
 const queue = new Queue(options);
 
 queue.setExecutor(params => {
-  console.log("received params", params);
+  console.log('received params', params);
   return "done";
 });
 ```
@@ -79,17 +79,17 @@ const result = await queue.process(params, id, options)
 
 #### arguments
 
-* params - Object - An data object to pass to the task executor
-* id - The id of the task. This is used for deduplication.
-* options -
+* `params` - Object - An data object to pass to the task executor
+* `id` - The id of the task. This is used for deduplication.
+* `options` - See below
 
 | option   | type             | default value            | description                                                                             |
 | -------- | ---------------- | ------------------------ | --------------------------------------------------------------------------------------- |
 | priority | number           | 'Queue.priority.LOW' (5) | Priority of the job.                                                                    |
 | maxAge   | number (seconds) | `Infinity`               | Time in seconds after which the job will expire. If not set, the global maxAge is used. |
 
-````
 ### Clearing the queue
+
 ```js
 const queue = new Queue()
 queue.clear()
