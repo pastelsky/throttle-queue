@@ -62,7 +62,7 @@ class Queue {
   pruneQueue() {
     this.getReadyJobs().forEach(job => {
       const { addedTime, maxAge, failureListeners } = job;
-      const isJobExpired = (addedTime.getTime() + maxAge) * 1000 < Date.now();
+      const isJobExpired = addedTime.getTime() + maxAge * 1000 < Date.now();
 
       if (isJobExpired) {
         failureListeners.forEach(listener => {
